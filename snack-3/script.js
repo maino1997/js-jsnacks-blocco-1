@@ -6,7 +6,7 @@ let sum = 0;
 let isRight = true;
 
 // Chiedo per 10 volte all'utente di inserire un numero 
-for (let i=0 ; i<10 ; i++){
+for (let i=0 ; i<10 && isRight; i++){
     const currentNumber = parseInt(prompt("inserisci un numero"));
     if(isNaN(currentNumber)){
         isRight = false;
@@ -22,4 +22,18 @@ if (isRight === true){
 displayElement.innerHTML = sum;
 } else {
     displayElement.innerHTML = "uno dei valori non è corretto";
+}
+
+
+// Prova mettendo i++ alla fine del ciclo 
+for (let i=0 ; i<10 && isRight;){
+    const currentNumber = parseInt(prompt("inserisci un numero"));
+    if(isNaN(currentNumber)){
+        isRight = false;
+    } else{
+        sum += currentNumber;
+        // NON METTERE QUA COME TRUE IL FLAG PERCHè COSì L'UTENTE PASSA SEMPRE,
+        // DISTASTRO
+    }
+    i++;
 }
